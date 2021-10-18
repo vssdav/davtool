@@ -22,7 +22,7 @@ msg "|| Update && Upgrade Package ||"
 #
 export token="1923840908:AAGKarBD_hD1cFgWlYA8HifnEtv2T_yE5vw"
 export Anykernel3="$(pwd)/Anykernel3"
-export ZIPNAME="Carna9e"
+export ZIPNAME="Platf"
 #
 # 
 export DEBIAN_FRONTEND=noninteractive
@@ -173,7 +173,7 @@ BUILD_DTBO=0
 
 # Sign the zipfile
 # 1 is YES | 0 is NO
-SIGN=0
+SIGN=1
 	if [ $SIGN = 1 ]
 	then
 		#Check for java
