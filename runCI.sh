@@ -1,10 +1,8 @@
-
 #! /bin/bash
 # shellcheck disable=SC2154
  # Script For Building Android arm64 Kernel
  # Copyright (c) 2018-2021 Update script by Ivan_Ssl
  #
- # thanks to Panchajanya1999 <rsk52959@gmail.com>
  #
  # Licensed under the Apache License, Version 2.0 (the "License");
  # you may not use this file except in compliance with the License.
@@ -33,6 +31,8 @@ cdir() {
 }
 
 ##------------------------------------------------------##
+export Anykernel3="$(pwd)/Anykernel3"
+export ZIPNAME="Platform"
 ##----------Basic Informations, COMPULSORY--------------##
 
 # The defult directory where the kernel should be placed
@@ -246,7 +246,7 @@ build_kernel() {
 
 	if [ "$PTTG" = 1 ]
  	then
-		tg_post_msg "<b>🔌Group On: [<a href='https://t.me/Random_iDn'>@Random_iDn</a>]</b>%0A<b>🔌Builder Name: </b><code>$AUTHOR</code>%0A<b>🔌Straight: [$KBUILD_BUILD_VERSION]-[$COMPILER]</b>%0A<b>🔌Machine: </b><code>$DISTRO</code>%0A<b>🔌Kernel: </b><code>$KERVER</code>%0A<b>Date: </b><code>$(TZ=$TZ date)</code>%0A<b>Device: </b><code>$MODEL[$DEVICE]</code>%0A<b>🔌PipeLine: </b><code>$(uname | awk -F: '{ print $1 }') $(uname -a | awk -F: '{ print $1 }')</code>%0A<b>🔌Core: </b><code>$PROCS</code>%0A<b>🔌Tools: </b><code>$KBUILD_COMPILER_STRING</code>%0A<b>🔌Branch: </b><code>$CI_BRANCH</code>%0A<b>🔌Commit: </b><code>$COMMIT_HEAD</code>%0A[<a href='$SERVER_URL'><a href='https://t.me/RandomiDn'>©Channel</a>]</a>"
+		tg_post_msg "<b>🔌Group On: [<a href='https://t.me/Random_iDn'>@Random_iDn</a>]</b>%0A<b>🔌Builder Name: </b><code>$AUTHOR</code>%0A<b>🔌Straight: [$KBUILD_BUILD_VERSION]-[$COMPILER]</b>%0A<b>🔌Machine: </b><code>$DISTRO</code>%0A<b>🔌Kernel: </b><code>$KERVER</code>%0A<b>%0A<b>🔌PipeLine: </b><code>$(uname -a | awk -F: '{ print $1 }')</code>%0A<b>🔌Core: </b><code>$PROCS</code>%0A<b>🔌Tools: </b><code>$KBUILD_COMPILER_STRING</code>%0A<b>🔌Branch: </b><code>$CI_BRANCH</code>%0A<b>🔌Commit: </b><code>$COMMIT_HEAD</code>%0A[<a href='$SERVER_URL'><a href='https://t.me/RandomiDn'>©Channel</a>]</a>"
 	fi
 
 	make O=out $DEFCONFIG
